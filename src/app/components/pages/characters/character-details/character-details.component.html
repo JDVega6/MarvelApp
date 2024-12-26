@@ -1,0 +1,42 @@
+
+<!-- Character Modal -->
+<br><br><br><br><br>
+
+<div class="character">
+    <div class="content-card">
+    <div class="character-img">
+      <img src="{{character?.thumbnail.path}}.{{character?.thumbnail.extension}}" >
+    </div>
+    <div class="modal-wrap">
+      <h1 class="title">
+        {{character?.name}}
+      </h1>
+      <p class="description image-back">{{character?.description}}</p>
+    </div>
+</div>
+<hr>
+    <div class="test" >
+        <h3>Stories</h3>
+        <div *ngFor="let item of characterStories" class="container">
+        <div class="card">
+            <div class="content-card" >
+                <div class="image">
+                    <img src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}" >
+                </div>
+                <div class="description">
+                  <h5>{{item.title}}</h5>
+                  <p>{{DescriptionStories(item.description)}}</p>
+              </div>
+            </div>
+        </div>
+        <a></a>
+        </div>
+    </div>
+    <div>
+      
+    </div>
+</div>
+
+  
+
+

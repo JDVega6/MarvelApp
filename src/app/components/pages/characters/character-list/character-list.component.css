@@ -1,0 +1,296 @@
+.main-container{
+    width: 100%;
+}
+.wide{
+    margin-top: 0px;
+}
+/* Title */
+.container-flex{
+    display: flex;
+}
+.title{
+    margin-left: 0px;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.title-container{
+    display: inline-block;
+    margin-right: auto;
+}
+
+/* card */
+.container {
+    display: inline-block;
+    width: 430px;
+    margin-right: 50px;
+
+    
+}
+.container .card {
+    height : 300px;  
+    background-color : #f9f9f9;
+    margin : 30px 10px;
+    padding : 20px 15px;
+    width : 430px;
+
+
+    background: rgba( 242, 224, 224, 0.05 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.container .card .content-card{
+    margin-top: -55px;
+    padding: 20px;
+}
+
+.container .card .image{
+    margin: 5px 0px 0px -40px;
+}
+.container .card .image img {
+    border-radius : 50%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.description{
+    margin-left: 20px;
+    margin-top: -15px;
+    padding: 10px;
+}
+
+.description h5{
+font-family: fantasy;
+font-weight: 300;
+color: rgb(48, 22, 22);
+}
+
+.description p{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-size: 13px;
+    text-align: justify;
+}
+
+.description .btn{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    position: absolute;
+    top: 8.0em;
+
+    border-radius: 7px;
+    background: #dc2e2e;
+    box-shadow: inset 8px 8px 16px #9e2121,
+                inset -8px -8px 16px #ff3b3b;
+
+}
+
+.content-card{
+    display: flex;
+    width: 100%;
+    margin-top: -40px;
+}   
+
+.comics{
+    width: auto;
+}
+.comics h3{
+    font-size: 20px;
+    color: #5a5858;
+}
+
+.comic-name{
+    text-justify: auto;
+    font-family: Arial; 
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0; border: none; background: none;
+    text-align: left;
+}
+.comic-name:hover{
+    color: #db1515;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 2px 5px;
+}
+
+/* modal */
+body, .modal{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal{
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: rgba(0,0,0,0.5);
+   transition: all 500ms ease;
+   opacity: 0;
+   visibility: hidden;
+}
+#btn-modal:checked ~ .modal{
+   opacity: 1;
+   visibility: visible;
+} 
+.contain-modal{
+   width: 600px;
+   margin: auto;
+   background: #fff;
+   box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+   transition: all 500ms ease;
+   position: relative;
+   transform: translateY(-30%);
+}
+#btn-modal:checked ~ .modal .contain-modal{
+   transform: translateY(0%);
+} 
+.contain-modal header{
+   padding: 10px;
+   background: #db8046;
+   color: #fff;
+}
+.contain-modal label{
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   color: #050505;
+   font-size: 15px;
+   cursor: pointer;
+}
+.contenido{
+   width: 100%;
+   padding: 10px; 
+}
+.contenido h3{
+   margin-bottom: 10px;
+}
+.contenido p{
+   margin-bottom: 7px;
+}
+#btn-modal{
+   display: none;
+}
+.lbl-modal{
+   background: #fff;
+   padding: 10px 15px;
+   border-radius: 4px;
+   cursor: pointer;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+   .contain-modal{
+       width: 95%;
+   }
+}
+
+/* Comic Modal */
+.modal-wrap {
+    padding: 20px;
+    padding-top: 0px;
+    display: flex;
+}
+
+.modal-wrap img {
+    display: block;
+    max-width: 500px;
+    max-height: 260px; 
+    object-fit: contain;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+
+.modal-wrap .title{
+    color: #e80d0d;
+}
+
+.btnClose
+{   
+    margin-right: 10px;
+    margin-top: 7px;
+    padding: 1%;
+    border: none;
+    background: none;
+    float: right;
+}
+
+.btnClose img{
+    height: 25px;
+}
+
+.comic-header{
+    align-items: right;
+}
+
+.title{
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 5%;
+    color: #000000;
+    display: contents;
+}
+
+ .description{
+    text-align: justify;
+    padding-top: 20px;;
+ }
+
+ .btn-add
+ {
+    width: 50%;
+    background-color: rgb(235, 231, 231);
+    border: none;
+    height: 70px;
+    color: rgb(0, 0, 0);
+ }
+ .btn-add img{
+    height: 30px;
+ }
+ .btn-add:hover{
+    background-color: rgb(212, 212, 212);
+ }
+
+ .btn-car
+ {
+    width: 50%;
+    background-color: rgb(226, 222, 222);
+    border: none;
+    font-weight: bolder;
+    height: 70px;
+    color: rgb(228, 40, 40);
+ }
+ .btn-car:hover{
+    background-color: rgb(212, 212, 212);
+ }
+ .btn-car img{
+    height: 30px;
+ }
+
+.color2{
+    background-color: rgb(235, 231, 231);
+    color: rgb(65, 62, 62);
+    font-weight: bolder;
+}
+
+.color1{
+    background-color: rgb(63, 54, 54);
+    color: rgb(228, 40, 40);
+    font-weight: bolder;
+}
+
+.btn-add.color1:hover{
+    background-color: rgb(43, 35, 35);
+ }
+

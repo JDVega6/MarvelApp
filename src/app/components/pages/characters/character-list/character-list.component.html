@@ -1,0 +1,89 @@
+<div class="main-container">
+    <div class="container-flex">
+        <div class="title-container">
+            <h2 class="title">
+            <img src="assets/characters.png"> 
+              Characters
+            </h2>
+        </div>  
+        <div class="col-xs-12 col-sm-6 col-md-5  test">
+            <div>
+              <button class="btn btn-secondary btn-lg dropdown-toggle custom-drop" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{keyOption}}
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu custom-menu" aria-labelledby="dropdownMenuButton">
+                <button type="button" class="dropdown-item" (click)="orderAs_A_Z()">Name (A-Z)</button>
+                <button type="button" class="dropdown-item" (click)="orderAs_Z_A()">Name (Z-A)</button>
+                <button type="button" class="dropdown-item" (click)="orderAsAsc()"> Date (Asc)</button>
+                <button type="button" class="dropdown-item" (click)="orderAsDesc()"> Date (Des)</button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="wide">
+        <div class="container" *ngFor="let character of (characters | async) | paginate: config"  @enterState>
+        <div class="card">
+            <div class="content-card">
+                <div class="image">
+                    <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
+                </div>
+                <div class="description">
+                  <h5>{{character.name}}</h5>
+                  <p>{{DescriptionCharacter(character.description)}}</p>
+                  <a [routerLink]="['/character-details', character.id]">
+              <button (click)="(character.id)" class="btn btn-danger">View More</button>
+            </a>
+              </div>
+            </div>
+            <div class="comics">
+              <h3>Related comics</h3>
+              <div try *ngFor="let item of comicArrays(character); let i = index">
+                <div class="column">
+                    <button  type="button" class="comic-name"  (click)="modalComic(item.resourceURI)">
+                      <label for="btn-modal" class="comic-name">
+                        {{nameComic(item?.name)}}
+                  </label>
+                    </button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <a></a>
+        </div>
+
+        <pagination-controls
+        [maxSize]="6"
+
+        [responsive]="true"
+        (pageChange)="onPageChange($event)"></pagination-controls>
+    </div> 
+</div>
+
+
+<input type="checkbox" id="btn-modal">
+	
+	<div class="modal">
+		<div class="contain-modal">
+      <div class="comic-header">
+        <!-- <button type="button" class="btnClose" aria-label="Close" (click)="modal.dismiss('Cross click')"> <img src="./assets/btn-close.png"> </button> -->
+      </div>
+      
+			<label for="btn-modal"><img src="./assets/btn-close.png"></label>
+        <br>
+        <div>
+          <div class="modal-wrap">
+            <img src="{{comic?.thumbnail.path}}.{{comic?.thumbnail.extension}}">
+            <div>
+            <h1 class="title">{{comic?.title}}</h1>
+            
+              <p class="description">{{DescriptionComic(comic?.description)}}</p>
+            </div>
+          </div>
+          
+          <div>
+            <button class="btn-add" [ngClass]="{'color1':switchAdd, 'color2':!switchAdd}"  (click)="addFavorites()"> <img src={{btnImgAdd}}> {{titlebutton}}</button>
+            <button class="btn-car" ><img src="assets/shopping-cart-primary.png"> Buy</button>
+		</div>
+	</div>
